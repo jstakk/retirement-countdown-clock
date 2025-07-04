@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Clock, Calendar, Briefcase } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -84,7 +83,7 @@ const RetirementCountdown = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col items-center justify-center p-6">
-      <div className="max-w-5xl w-full mx-auto text-center animate-fade-in">
+      <div className="max-w-6xl w-full mx-auto text-center animate-fade-in">
         
         {/* Header */}
         <div className="mb-12">
@@ -134,12 +133,12 @@ const RetirementCountdown = () => {
           </p>
         </div>
 
-        {/* Main Countdown Display */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+        {/* Main Countdown Display - All 5 boxes on same row */}
+        <div className="grid grid-cols-5 gap-3 md:gap-6 mb-12">
           
           {/* Years */}
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
-            <div className="font-mono text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
+            <div className="font-mono text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
               {formatNumber(timeRemaining.years)}
             </div>
             <div className="text-slate-600 text-xs md:text-sm font-medium uppercase tracking-wider">
@@ -148,8 +147,8 @@ const RetirementCountdown = () => {
           </div>
 
           {/* Days */}
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
-            <div className="font-mono text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
+            <div className="font-mono text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
               {formatNumber(timeRemaining.days)}
             </div>
             <div className="text-slate-600 text-xs md:text-sm font-medium uppercase tracking-wider">
@@ -158,8 +157,8 @@ const RetirementCountdown = () => {
           </div>
 
           {/* Hours */}
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
-            <div className="font-mono text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
+            <div className="font-mono text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
               {formatNumber(timeRemaining.hours)}
             </div>
             <div className="text-slate-600 text-xs md:text-sm font-medium uppercase tracking-wider">
@@ -168,8 +167,8 @@ const RetirementCountdown = () => {
           </div>
 
           {/* Minutes */}
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
-            <div className="font-mono text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
+            <div className="font-mono text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
               {formatNumber(timeRemaining.minutes)}
             </div>
             <div className="text-slate-600 text-xs md:text-sm font-medium uppercase tracking-wider">
@@ -178,17 +177,19 @@ const RetirementCountdown = () => {
           </div>
 
           {/* Seconds */}
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
-            <div className="font-mono text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
+            <div className="font-mono text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-800 mb-2 animate-pulse-subtle">
               {formatNumber(timeRemaining.seconds)}
             </div>
             <div className="text-slate-600 text-xs md:text-sm font-medium uppercase tracking-wider">
               Sekunder
             </div>
           </div>
+        </div>
 
-          {/* Work Days */}
-          <div className="bg-gradient-to-br from-slate-100/80 to-slate-200/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 col-span-2 lg:col-span-3">
+        {/* Work Days - Separate row */}
+        <div className="mb-12">
+          <div className="bg-gradient-to-br from-slate-100/80 to-slate-200/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 max-w-2xl mx-auto">
             <div className="flex items-center justify-center mb-3">
               <Briefcase className="w-5 h-5 text-slate-600 mr-2" />
               <div className="text-slate-600 text-sm md:text-base font-medium uppercase tracking-wider">
